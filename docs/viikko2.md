@@ -2,7 +2,7 @@
 
 Viikko meni odotetusti lähinnä joulujuhlissa, sain kuitenkin jotain tehtyäkin.
 
-Huomasin ettei laatikossani ollut hammastankoja. En luottanut renkaan toimintaan pystysuunnassa alkuunkaan, joten muutin suunnitelmaani: nyt tutkittava kappale on kääntöpöydällä jonka päällä olevaa esinettä tutkitaan tökkimällä kosketussensorilla. Koska en pysty robotin avulla vaihtelemaan tökkijän tai pöydän korkeutta, tulee tästä ominaisuudesta joko ihmisavusteinen tai se jää kokonaan pois. 
+Huomasin ettei laatikossani ollut hammastankoja. En luottanut pelkän kumirenkaan toimintaan pystysuunnassa alkuunkaan, joten muutin suunnitelmaani: nyt tutkittava kappale on kääntöpöydällä jonka päällä olevaa esinettä tutkitaan tökkimällä kosketussensorilla. Koska en pysty robotin avulla vaihtelemaan tökkijän tai pöydän korkeutta, tulee tästä ominaisuudesta joko ihmisavusteinen tai se jää kokonaan pois. 
 
 Nyt siis koordinaatiston ja korkeuksien sijasta skannataankin esineen pintaa ja tästä luodaan poikkileikkaus. 
 
