@@ -13,7 +13,7 @@ public class Toucher {
 		
 	}
 
-	public boolean isTouching() {
+	public boolean isPressed() {
 		if (sensor.isPressed()) {
 			return true;
 		}
