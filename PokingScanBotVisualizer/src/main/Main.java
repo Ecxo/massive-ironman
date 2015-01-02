@@ -14,9 +14,13 @@ public class Main {
 		BTConnection connection = new BTConnection();
 		connection.open();
 		ResultList list = new ResultList(connection);
+		
 		VisualizationWindow win = new VisualizationWindow(list);
 		SwingUtilities.invokeLater(win);
-
+		
+		
+		Engine engine = new Engine(win, list);
+		engine.run();
 		
 		
 

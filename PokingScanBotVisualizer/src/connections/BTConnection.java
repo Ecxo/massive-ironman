@@ -37,20 +37,12 @@ public class BTConnection {
 	public int read() {
 
 		int value = -1;
-		try {
-			value = input.readInt();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			System.out.println("Error sleeping");
-			e.printStackTrace();
-		}
-
+			try {
+				value = input.readInt();
+			} catch (IOException e) {
+				System.out.println("Error reading");
+				e.printStackTrace();
+			}
 		return value;
 
 	}

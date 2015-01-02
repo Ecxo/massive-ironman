@@ -15,7 +15,7 @@ public class ResultList {
 		
 	}
 	
-	public void getData() {
+	public void fetchData() {
 		int distance = connection.read();
 		System.out.println(distance);
 		results.add(distance);
