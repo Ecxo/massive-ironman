@@ -11,7 +11,7 @@ public class BTConnection {
 	private InputStream inputstream;
 	private DataInputStream input;
 
-	public BTConnection() {
+	public BTConnection(String NXTname) {
 		try {
 			BTConnection = NXTCommFactory
 					.createNXTComm(NXTCommFactory.BLUETOOTH);
@@ -20,7 +20,7 @@ public class BTConnection {
 			e.printStackTrace();
 		}
 		info = new NXTInfo(NXTCommFactory.BLUETOOTH, "nxt-auto",
-				"00:16:53:0a:90:b0");
+				NXTname);
 	}
 
 	public void open() {

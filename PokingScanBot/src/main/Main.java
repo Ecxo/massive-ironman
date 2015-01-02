@@ -8,6 +8,7 @@ import lejos.nxt.Motor;
 import lejos.nxt.NXTRegulatedMotor;
 import lejos.nxt.SensorPort;
 import lejos.nxt.TouchSensor;
+import lejos.nxt.UltrasonicSensor;
 import lejos.nxt.addon.OpticalDistanceSensor;
 import lejos.nxt.comm.Bluetooth;
 import lejos.nxt.comm.NXTConnection;
@@ -30,10 +31,10 @@ public class Main {
 		PokerMotor poker = new PokerMotor(Motor.A, touch);
 		NXTRegulatedMotor table = Motor.B;
 		DistanceLogger log = new DistanceLogger();
-		OpticalDistanceSensor optical = new OpticalDistanceSensor(SensorPort.S2);
+		UltrasonicSensor sonic = new UltrasonicSensor(SensorPort.S2);
 
 		MovementController move = new MovementController(poker, table, log,
-				optical, connection);
+				sonic, connection);
 		move.startOptical();
 		
 		System.out.println("Finished, press key to stop");

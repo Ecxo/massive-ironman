@@ -27,10 +27,9 @@ public class VisualizationGraphics extends JPanel {
 		g.fillOval(10, 10, 10, 10);
 		g.setColor(Color.red);
 		this.list = results.getArrayList();
-		System.out.println("This is g getting to for-loop!");
 		for (int i = 0; i < list.size(); i++) {
-			g.fillOval(30 + 10 * i, 30 + 10 * i, 20, 20);
-			System.out.println("This is g shouting!" + list.get(i));
+			g.fillOval(30 + 20 * i, list.get(i), 20, 20);
+			System.out.println("This is g shouting: " + list.get(i));
 		}
 
 	}

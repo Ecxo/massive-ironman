@@ -1,6 +1,7 @@
 package movement;
 
 import lejos.nxt.NXTRegulatedMotor;
+import lejos.nxt.UltrasonicSensor;
 import lejos.nxt.addon.OpticalDistanceSensor;
 import logging.DistanceLogger;
 import logging.PcConnection;
@@ -11,16 +12,16 @@ public class MovementController {
 	private PokerMotor poker;
 	private NXTRegulatedMotor table;
 	private DistanceLogger logger;
-	private OpticalDistanceSensor optical;
+	private UltrasonicSensor sonic;
 	private PcConnection connection;
 	private int fullTableRotation = 20000;
 
 	public MovementController(PokerMotor p, NXTRegulatedMotor tt,
-			DistanceLogger log, OpticalDistanceSensor op, PcConnection c) {
+			DistanceLogger log, UltrasonicSensor s, PcConnection c) {
 		poker = p;
 		table = tt;
 		logger = log;
-		optical = op;
+		sonic = s;
 		connection = c;
 	}
 
@@ -39,12 +40,12 @@ public class MovementController {
 	public void startOptical() {
 		for (int i = 0; i < 20; i++) { // Sensor always gives an incorrect first
 										// measurement unless I do this
-			optical.getDistance();
+			sonic.getDistance();
 		}
 
 		for (int angle = 0; angle < 20000; angle = angle + fullTableRotation
 				/ 20) {
-			int distance = optical.getDistance();
+			int distance = sonic.getDistance();
 			table.rotate(fullTableRotation / 20);
 			System.out.println(distance);
 			connection.sendData(distance);
