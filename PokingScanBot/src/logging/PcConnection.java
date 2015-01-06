@@ -1,5 +1,6 @@
 package logging;
 
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
@@ -8,17 +9,19 @@ import lejos.nxt.comm.Bluetooth;
 import lejos.nxt.comm.NXTConnection;
 
 public class PcConnection {
-	
+
 	private NXTConnection connection;
 	private DataOutputStream output;
-	
+	private DataInputStream input;
+
 	public PcConnection() {
 		connection = Bluetooth.waitForConnection();
-		
+
 		System.out.println("Connected");
 		output = connection.openDataOutputStream();
+		input = connection.openDataInputStream();
 	}
-	
+
 	public void sendData(int distance) {
 		try {
 			output.writeInt(distance);
@@ -38,7 +41,7 @@ public class PcConnection {
 			Button.waitForAnyPress(10000);
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	public void close() {
@@ -49,10 +52,19 @@ public class PcConnection {
 			System.out.println("Error closing connection");
 			e.printStackTrace();
 		}
-		
-		
+
 	}
-	
-	
+
+	public int readInputStream() {
+		try {
+			int cmd = input.readInt();
+			return cmd;
+		} catch (IOException e) {
+			System.out.println("Error reading input");
+			e.printStackTrace();
+		}
+		return 0;
+
+	}
 
 }

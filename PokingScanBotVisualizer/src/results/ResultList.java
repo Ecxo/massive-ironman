@@ -7,7 +7,8 @@ import connections.BTConnection;
 public class ResultList {
 	
 	private BTConnection connection;
-	ArrayList<Integer> results;
+	private ArrayList<Integer> results;
+
 
 	public ResultList(BTConnection c) {
 		connection = c;
@@ -24,5 +25,7 @@ public class ResultList {
 	public ArrayList<Integer> getArrayList() {		
 		return results;
 	}
+	
+	
 	
 }

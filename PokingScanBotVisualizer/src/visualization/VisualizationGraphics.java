@@ -13,23 +13,28 @@ public class VisualizationGraphics extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private ResultList results;
 	private ArrayList<Integer> list;
+	private AngleCalculator angleCalc;
 
-	public VisualizationGraphics(ResultList r) {
+	public VisualizationGraphics(ResultList r, AngleCalculator c) {
 		list = null;
 		results = r;
 		setBackground(Color.BLACK);
+		angleCalc = c;
 	}
 
 	@Override
 	public void paint(Graphics g) {
+		
 		super.paint(g);
 		g.setColor(Color.GREEN);
-		g.fillOval(10, 10, 10, 10);
+		g.fillOval(angleCalc.getCenterX(), angleCalc.getCenterY(), 10, 10);
 		g.setColor(Color.red);
+		angleCalc.resetAngle();
 		this.list = results.getArrayList();
 		for (int i = 0; i < list.size(); i++) {
-			g.fillOval(30 + 20 * i, list.get(i), 20, 20);
-			System.out.println("This is g shouting: " + list.get(i));
+			angleCalc.calculateCoordinates(list.get(i));
+			
+			g.fillOval(angleCalc.getRoundedX(),angleCalc.getRoundedY(),10, 10);
 		}
 
 	}

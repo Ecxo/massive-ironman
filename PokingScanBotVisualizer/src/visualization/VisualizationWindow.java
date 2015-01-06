@@ -13,9 +13,12 @@ public class VisualizationWindow implements Runnable {
 	private JFrame frame;
 	private VisualizationGraphics graph;
 	private ResultList results;
+	private AngleCalculator angleCalc;
 	
-	public VisualizationWindow(ResultList l) {
+	
+	public VisualizationWindow(ResultList l, AngleCalculator c) {
 		results = l;		
+		angleCalc = c;
 	}
 
 	@Override
@@ -33,7 +36,7 @@ public class VisualizationWindow implements Runnable {
 	}
 
 	private void createComponents(Container container) {
-		graph = new VisualizationGraphics(results);
+		graph = new VisualizationGraphics(results, angleCalc);
 		frame.getContentPane().setBackground(Color.BLACK);
 		container.add(graph);
 	}
