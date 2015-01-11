@@ -2,7 +2,11 @@ package sensors;
 
 import lejos.nxt.TouchSensor;
 
-
+/**
+ * Checks the touch sensor. This class was created because using the sensor directly caused some problems that I could not figure out.
+ * @author petri
+ *
+ */
 
 public class Toucher {
 	

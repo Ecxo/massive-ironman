@@ -8,6 +8,13 @@ import java.io.IOException;
 import lejos.nxt.Button;
 import lejos.nxt.Sound;
 
+/**
+ * Class for saving distance measurements to file. Currently unused due to the robot using bluetooth connection to communicate with the PC.
+ * 
+ * @author petri
+ *
+ */
+
 public class DistanceLogger {
 
 	private DataOutputStream out;
@@ -28,10 +35,15 @@ public class DistanceLogger {
 		}
 
 	}
+	/**
+	 * attemps to insert values into the file
+	 * @param distance distance data to be saved
+	 * @param angle angle of the turntable
+	 */
 
 	public void insert(int distance, int angle) {
 		try {
-			out.writeDouble(200000);
+			out.writeDouble(distance);
 		} catch (IOException e) {
 			System.out.println("Error in file writing!");
 			Sound.twoBeeps();
@@ -39,6 +51,10 @@ public class DistanceLogger {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * closes the stream
+	 */
 
 	public void close() {
 		try {

@@ -1,12 +1,19 @@
 package visualization;
 
 import java.awt.Color;
+
 import java.awt.Graphics;
 import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
 import results.ResultList;
+
+/**
+ * Draws the graphics of the measurement window. Reads results list for distance and uses anglecalc to calculate the correct position.
+ * @author petri
+ *
+ */
 
 public class VisualizationGraphics extends JPanel {
 

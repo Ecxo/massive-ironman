@@ -2,6 +2,10 @@ package connections;
 
 import java.io.*;
 
+/**
+ * Bluetooth connection for sending and receiving data from the robot.
+ */
+
 import lejos.pc.comm.*;
 
 public class BTConnection {
@@ -12,6 +16,11 @@ public class BTConnection {
 	private DataInputStream input;
 	private OutputStream outputstream;
 	private DataOutputStream output;
+	
+	/**
+	 * Create the connection.
+	 * @param NXTname bluetooth address of the robot.
+	 */
 
 	public BTConnection(String NXTname) {
 		try {
@@ -24,6 +33,10 @@ public class BTConnection {
 		info = new NXTInfo(NXTCommFactory.BLUETOOTH, "nxt-auto",
 				NXTname);
 	}
+	
+	/**
+	 * Opens connection for input and output.
+	 */
 
 	public void open() {
 		try {
@@ -37,6 +50,11 @@ public class BTConnection {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * Attempts to read an int from the robot. Returns -1 if reading fails, for example if the robot is turned off.
+	 * @return
+	 */
 
 	public int read() {
 
@@ -49,7 +67,10 @@ public class BTConnection {
 		return value;
 
 	}
-	
+	/**
+	 * Sends a command to the robot.
+	 * @param cmd command, used values are 1 = sonic, 2 = touch sensor.
+	 */
 	public void sendCommand(int cmd) {
 		try {
 			output.writeInt(cmd);
@@ -60,6 +81,10 @@ public class BTConnection {
 		}
 		
 	}
+	
+	/**
+	 * saves the command so it can be sent.
+	 */
 	
 	public void flushOutput() {
 		try {

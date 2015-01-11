@@ -1,15 +1,11 @@
 package visualization;
 
-import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
 
-import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -17,6 +13,12 @@ import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 
 import connections.BTConnection;
+
+/**
+ * Window for showign settings and starting the scan.
+ * @author petri
+ *
+ */
 
 public class SettingsWindow implements Runnable, ActionListener {
 	private JFrame frame;

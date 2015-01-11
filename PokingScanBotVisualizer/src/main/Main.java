@@ -9,6 +9,11 @@ import visualization.SettingsWindow;
 import visualization.VisualizationWindow;
 
 public class Main {
+	
+	/**
+	 * Creates the connection to the robot, starts the engine and opens the visualization windows.
+	 * @param args
+	 */
 
 	public static void main(String[] args) {
 		

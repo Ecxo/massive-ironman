@@ -1,12 +1,19 @@
 package logging;
 
 import java.io.DataInputStream;
+
 import java.io.DataOutputStream;
 import java.io.IOException;
 
 import lejos.nxt.Button;
 import lejos.nxt.comm.Bluetooth;
 import lejos.nxt.comm.NXTConnection;
+
+/**
+ * Bluetooth connection for receiving and sending.
+ * @author petri
+ *
+ */
 
 public class PcConnection {
 
@@ -21,6 +28,11 @@ public class PcConnection {
 		output = connection.openDataOutputStream();
 		input = connection.openDataInputStream();
 	}
+	
+	/**
+	 * Sends a int value to the PC.
+	 * @param distance
+	 */
 
 	public void sendData(int distance) {
 		try {
@@ -32,6 +44,11 @@ public class PcConnection {
 		}
 		flush();
 	}
+	
+	/**
+	 * Flush the output stream, saves the sent data.
+	 * 
+	 */
 
 	public void flush() {
 		try {
@@ -43,6 +60,10 @@ public class PcConnection {
 		}
 
 	}
+	
+	/**
+	 * Close both input and output connection
+	 */
 
 	public void close() {
 		try {
@@ -54,6 +75,11 @@ public class PcConnection {
 		}
 
 	}
+	
+	/**
+	 * Reads commands sent from the PC to the inputstream. 
+	 * @return value of the command, 0 = nothing, 1 = sonic, 2 = touch sensor.
+	 */
 
 	public int readInputStream() {
 		try {

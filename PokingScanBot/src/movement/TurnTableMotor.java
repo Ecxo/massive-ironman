@@ -1,7 +1,11 @@
 package movement;
 
 import lejos.nxt.NXTRegulatedMotor;
-
+/**
+ * Controls the turn table engine.
+ * @author petri
+ *
+ */
 public class TurnTableMotor {
 
 	private NXTRegulatedMotor turnTable;

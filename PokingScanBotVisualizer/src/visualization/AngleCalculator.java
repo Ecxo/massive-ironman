@@ -1,5 +1,10 @@
 package visualization;
-
+/**
+ * Calculates where in a circle's circumference the next distance measurement should be placed at.
+ * 
+ * @author petri
+ *
+ */
 public class AngleCalculator {
 
 	private int currentAngle;
@@ -21,6 +26,11 @@ public class AngleCalculator {
 		this.currentAngle = 0;
 
 	}
+	
+	/**
+	 * calculates the correct coordinates based on the current angle and distance from center point. Increases current angle to the next point.
+	 * @param distance
+	 */
 
 	public void calculateCoordinates(int distance) {
 		double angle = Math.toRadians(this.currentAngle);

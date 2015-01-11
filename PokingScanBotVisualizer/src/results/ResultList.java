@@ -2,6 +2,10 @@ package results;
 
 import java.util.ArrayList;
 
+/**
+ * Keeps a list of distance measurement results from the robot and read the connection to add more.
+ */
+
 import connections.BTConnection;
 
 public class ResultList {

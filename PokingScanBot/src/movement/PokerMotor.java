@@ -1,7 +1,14 @@
 package movement;
 
 import sensors.Toucher;
+
 import lejos.nxt.NXTRegulatedMotor;
+
+/**
+ * Controls the motor moving the touch sensor.
+ * @author petri
+ *
+ */
 
 public class PokerMotor {
 
@@ -14,6 +21,11 @@ public class PokerMotor {
 		this.toucher = t;
 
 	}
+	
+	/**
+	 * Drives the motor forward, when touch sensor is pressed, checks the tacho count and drive to the opposite direction the same amount of revolutions
+	 * @return
+	 */
 
 	public int measure() {
 		poker.resetTachoCount();

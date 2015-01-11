@@ -13,6 +13,11 @@ import movement.PokerMotor;
 import sensors.Toucher;
 
 public class Main {
+	
+	/**
+	 * Waits for pc to connect to the robot, then starts measurements
+	 * @param args
+	 */
 
 	public static void main(String[] args) {
 
@@ -26,7 +31,9 @@ public class Main {
 			System.out.println(command);
 		}
 		System.out.println("Command: " + command);
-
+		
+		
+		//Create most needed classes here for dependency injection
 		Toucher touch = new Toucher(new TouchSensor(SensorPort.S1));
 		PokerMotor poker = new PokerMotor(Motor.A, touch);
 		NXTRegulatedMotor table = Motor.B;
@@ -42,7 +49,7 @@ public class Main {
 		move.startSonic();
 		}
 		if (command == 2) {
-			move.startPoking();
+		move.startPoking();
 		}
 		
 		System.out.println("Finished, press key to stop");
